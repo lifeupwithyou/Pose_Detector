@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang=ja>
+    <head>
+        <title>HTMLの表示</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+        
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        <p>{{message}}</p>
+        <h2>画像アップロード</h2>
+        <form method="post" action="/index" enctype="multipart/form-data">
+            <label for="file">写真をアップロード:</label>
+            <input type="file" name="file" accept="image/*" required>
+            <input type="submit" value="アップロード">
+        </form>
+
+        {% if result %}
+        <h2>姿勢の結果:{{ result }}</h2>
+        {% endif %}
+        
+        {% if uploaded_image_url %}
+        <h2>アップロードされた画像:</h2>
+        <img src="{{ uploaded_image_url }}" alt="Uploaded Image" style="max-width: 500px; max-height: 500px;">
+        {% endif %}
+        
+      
+
+    </body>

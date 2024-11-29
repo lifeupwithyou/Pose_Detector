@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+ 
+{% block title %}
+Predict_Page
+{% endblock %}
+ 
+{% block content %}
+<form method="post" action="/predict" enctype="multipart/form-data">
+  <label for="file">写真をアップロード:</label>
+  <input type="file" name="file" accept="image/*" required>
+  <input type="submit" value="解析する">
+</form>
+{% endblock %}
+ 
+{% block footer %}
+copyright 2021 Yuki_Tokieda
+{% endblock %}
