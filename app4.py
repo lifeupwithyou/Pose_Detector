@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import joblib
 import os
 
-app = Flask(__name__, template_folder="templates")
+app = Flask(__name__,static_folder='static', template_folder="templates")
 
 UPLOAD_FOLDER = 'static/uploads'  # 保存先ディレクトリ
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # ディレクトリが存在しない場合は作成
